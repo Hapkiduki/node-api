@@ -17,9 +17,7 @@ app.use(bodyParser.json())
 app.use(require('./routes/usuario'));
 
 
-//mongodb+srv://root:<password>@cluster0-no1g9.mongodb.net/test?retryWrites=true&w=majority
-//mongoose.connect('mongodb://localhost/my_database', {
-mongoose.connect('mongodb+srv://root:root@cluster0-no1g9.mongodb.net/cafe?retryWrites=true&w=majority', {
+mongoose.connect(process.env.URLDB, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, (err, res) => {
